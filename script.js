@@ -22,12 +22,12 @@ FUNCTION play()
     SET variabel startOrd till "FOUR";
     SET variabel slutOrd till "FIVE";
     SET variabel testOrd till "FOUR";
-    SET variabel latestOrd till INPUT från användare
 
     PRINT "välkommen till spelet. Målet är att göra om ordet startOrd till ordet slutOrd i så få drag som möjligt. 
     För varje nytt ord ska en bokstav ur föregående ord ändras."
 
     WHILE latestWord inte är samma som slutOrd
+        SET variabel latestOrd till INPUT från användare    
         PRINT latestOrd
         SET variabel true till CALL FUNCTION isOneLetterApart(latestOrd, testOrd)
         IF true är lika med 1
@@ -51,9 +51,4 @@ FUNCTION isOneLetterApart(latestOrd, testOrd)
 END FUNCTION
 
 */
-
-
-
-
-
 
