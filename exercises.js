@@ -3,13 +3,14 @@
 /*
     SET variabel goal till 1
     SET variabel antalKast till 0
-    SET variabel tärning
 
     WHILE (goal < 7)
-        tärning = slumpat tal mellan 1 och 6
+        SET variabel tärning till slumpat tal mellan 1 och 6
         öka antalKast med 1
+        PRINT tärning
         IF (tärning === goal)
             öka goal med 1
+            PRINT Snyggt, försök nu få goal!
         END IF
     END WHILE
 
@@ -18,26 +19,27 @@
 
 // KNOCK OUT
 /*
-    SET variabel knockOut till INPUT från användare
+    SET variabel knockOut till INPUT från användare (6, 7, 8 eller 9)
     SET variabel endPoint till INPUT från användare
     SET variabel kastEtt
     SET variabel kastTvå
     SET variabel points till 0
+    SET variabel sum till 0
 
-    WHILE points är mindre än endPoint
+    WHILE sum är mindre än endPoint
         kastEtt = slumpat tal mellan 1 och 6
         kastTvå = slumoat tal mellan 1 och 6
         points = points + kastEtt + kastTvå
-        PRINT du kastade en kastEtt och en kastTvå
-        IF kastEtt är samma som knockOut
-            points = points minus kastEtt
+        PRINT du kastade en kastEtt och en kastTvå, din poäng blev points
+        IF points är samma som knockOut
+            sum = sum - points
+        ELSE
+            sum = sum + points
         END IF
-        IF kastTvå är samma som knockOut
-            points = points minus kastTvå
-        END IF
+        PRINT totala poäng är sum
     END WHILE
 
-    PRINT Grattis, du fick points poäng och har vunnit spelet!
+    PRINT Grattis, du fick sum poäng och har vunnit spelet!
 */
 
 // GOINT TO BOSTON

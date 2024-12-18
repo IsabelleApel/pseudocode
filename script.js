@@ -24,9 +24,12 @@ FUNCTION play()
     SET variabel testOrd till "FOUR";
     SET variabel latestOrd till INPUT från användare
 
+    PRINT "välkommen till spelet. Målet är att göra om ordet startOrd till ordet slutOrd i så få drag som möjligt. 
+    För varje nytt ord ska en bokstav ur föregående ord ändras."
+
     WHILE latestWord inte är samma som slutOrd
         PRINT latestOrd
-        SET variabel true till CALL FUNCTION isOneLetterApart(latestWord, testWord)
+        SET variabel true till CALL FUNCTION isOneLetterApart(latestOrd, testOrd)
         IF true är lika med 1
             flytta värdet i latestOrd till testOrd
             latestOrd = INPUT från användare
@@ -48,45 +51,6 @@ FUNCTION isOneLetterApart(latestOrd, testOrd)
 END FUNCTION
 
 */
-
-function play() {
-    const ordbok = ["FOUR", "FOUL", "FOOL", "FOOT", "FORT", "FORE", "FIRE", "FIVE"];
-    const startOrd = "FOUR";
-    const slutOrd = "FIVE";
-    let testOrd = startOrd;
-    let latestOrd = prompt("Ange ett ord (börja med 'FOUR'): ");
-
-    while (latestOrd !== slutOrd) {
-        console.log(`Ditt senaste ord: ${latestOrd}`);
-
-        if (isOneLetterApart(latestOrd, testOrd)) {
-            testOrd = latestOrd;
-            latestOrd = prompt("Ange ett nytt ord: ");
-        } else {
-            console.log(`Ditt ord ska skilja på en bokstav från ${testOrd}`);
-            latestOrd = prompt("Försök igen: ");
-        }
-    }
-
-    console.log(`Grattis! Du nådde slutordet: ${slutOrd}`);
-}
-
-function isOneLetterApart(latestOrd, testOrd) {
-    if (latestOrd.length !== testOrd.length) return false;
-
-    let diffCount = 0;
-    for (let i = 0; i < latestOrd.length; i++) {
-        if (latestOrd[i] !== testOrd[i]) {
-            diffCount++;
-        }
-        if (diffCount > 1) return false;
-    }
-
-    return diffCount === 1;
-}
-
-// Startar spelet
-play();
 
 
 
