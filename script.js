@@ -5,7 +5,7 @@
     SET variabel people till INPUT från användare
     SET variabel tip till INPUT från användare
 
-    SET variable eachPerson till (sum*tip)/people
+    SET variable eachPerson till räkna ut vad varje person ska betala
 
     PRINT eachPerson
 */
